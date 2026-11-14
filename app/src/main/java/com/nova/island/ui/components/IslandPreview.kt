@@ -69,7 +69,7 @@ fun IslandPreview(
         contentAlignment = Alignment.TopCenter,
     ) {
         Box(modifier = Modifier.padding(top = 14.dp)) {
-            PreviewIsland(
+            IslandCapsule(
                 settings = settings,
                 expanded = expanded,
                 onToggle = { expanded = !expanded },
@@ -86,11 +86,16 @@ fun IslandPreview(
     }
 }
 
+/**
+ * Kapsul island. Dipakai oleh preview di aplikasi dan oleh overlay sungguhan di layar.
+ */
 @Composable
-private fun PreviewIsland(
+fun IslandCapsule(
     settings: IslandSettings,
     expanded: Boolean,
     onToggle: () -> Unit,
+    modifier: Modifier = Modifier,
+    expandedSubtitle: String = "Pratinjau tampilan",
 ) {
     val effects = settings.animationEffects
     val speed = settings.animationSpeedPercent.coerceIn(50, 200)
@@ -123,7 +128,7 @@ private fun PreviewIsland(
     val shape = RoundedCornerShape(radius)
 
     Box(
-        modifier = Modifier
+        modifier = modifier
             .width(width)
             .height(height)
             .clip(shape)
@@ -176,7 +181,7 @@ private fun PreviewIsland(
                         color = MaterialTheme.colorScheme.onBackground,
                     )
                     Text(
-                        text = "Pratinjau tampilan",
+                        text = expandedSubtitle,
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )

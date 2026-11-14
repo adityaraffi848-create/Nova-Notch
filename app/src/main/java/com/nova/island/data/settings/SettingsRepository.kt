@@ -23,6 +23,7 @@ class SettingsRepository(private val dataStore: DataStore<Preferences>) {
         val SPEED = intPreferencesKey("animation_speed_percent")
         val OPACITY = intPreferencesKey("background_opacity_percent")
         val GRADIENT = intPreferencesKey("gradient_intensity_percent")
+        val TOP_OFFSET = intPreferencesKey("top_offset_dp")
     }
 
     private val defaults = IslandSettings()
@@ -40,6 +41,7 @@ class SettingsRepository(private val dataStore: DataStore<Preferences>) {
                 animationSpeedPercent = p[Keys.SPEED] ?: defaults.animationSpeedPercent,
                 backgroundOpacityPercent = p[Keys.OPACITY] ?: defaults.backgroundOpacityPercent,
                 gradientIntensityPercent = p[Keys.GRADIENT] ?: defaults.gradientIntensityPercent,
+                topOffsetDp = p[Keys.TOP_OFFSET] ?: defaults.topOffsetDp,
             )
         }
 
@@ -60,6 +62,7 @@ class SettingsRepository(private val dataStore: DataStore<Preferences>) {
             it[Keys.SPEED] = s.animationSpeedPercent
             it[Keys.OPACITY] = s.backgroundOpacityPercent
             it[Keys.GRADIENT] = s.gradientIntensityPercent
+            it[Keys.TOP_OFFSET] = s.topOffsetDp
         }
     }
 

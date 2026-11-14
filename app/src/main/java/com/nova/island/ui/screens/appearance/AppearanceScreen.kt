@@ -80,6 +80,14 @@ fun AppearanceScreen(
                     onValueChange = { draft = draft.copy(radiusDp = it.roundToInt()) },
                     onValueChangeFinished = { onCommit(draft) },
                 )
+                NovaSliderRow(
+                    label = "Posisi dari atas layar",
+                    valueText = "${draft.topOffsetDp} dp",
+                    value = draft.topOffsetDp.toFloat(),
+                    valueRange = 0f..60f,
+                    onValueChange = { draft = draft.copy(topOffsetDp = it.roundToInt()) },
+                    onValueChangeFinished = { onCommit(draft) },
+                )
             }
         }
 

@@ -5,13 +5,13 @@
 Aplikasi Android **Dynamic Island interaktif**: musik dengan lirik tersinkron, notifikasi WhatsApp,
 indikator charging, dan deteksi Bluetooth / WiFi / hotspot dalam satu kapsul di atas layar.
 
-> Status: **Phase 1 selesai** (fondasi project, design system, navigasi, penyimpanan pengaturan).
-> Overlay Dynamic Island sungguhan dikerjakan mulai Phase 2. Lihat [docs/ROADMAP.md](docs/ROADMAP.md).
+> Status: **Phase 2 selesai** (overlay Dynamic Island sungguhan di atas aplikasi lain, mode Normal/Expanded, ikon adaptive).
+> Musik, WhatsApp, dan konektivitas menyusul. Lihat [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Teknologi
 
 Kotlin, Jetpack Compose, Material 3, DataStore, MVVM + repository, Navigation Compose.
-Min SDK 29 (Android 10), compile/target SDK 35, JDK 17.
+Min SDK 26 (Android 8), compile/target SDK 35, JDK 17.
 
 ## Menjalankan project
 

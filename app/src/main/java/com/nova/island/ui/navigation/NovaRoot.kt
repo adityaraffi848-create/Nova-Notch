@@ -33,6 +33,9 @@ import com.nova.island.ui.theme.NovaColors
 fun NovaRoot(
     settings: IslandSettings,
     viewModel: MainViewModel,
+    overlayGranted: Boolean,
+    onIslandEnabledChange: (Boolean) -> Unit,
+    onRequestOverlayPermission: () -> Unit,
 ) {
     val navController = rememberNavController()
     val backStackEntry by navController.currentBackStackEntryAsState()
@@ -83,7 +86,9 @@ fun NovaRoot(
             composable(NovaDestination.Home.route) {
                 HomeScreen(
                     settings = settings,
-                    onIslandEnabledChange = viewModel::setIslandEnabled,
+                    overlayGranted = overlayGranted,
+                    onIslandEnabledChange = onIslandEnabledChange,
+                    onRequestOverlayPermission = onRequestOverlayPermission,
                 )
             }
             composable(NovaDestination.Features.route) {
@@ -99,7 +104,7 @@ fun NovaRoot(
             composable(NovaDestination.Settings.route) {
                 SettingsScreen(
                     settings = settings,
-                    onIslandEnabledChange = viewModel::setIslandEnabled,
+                    onIslandEnabledChange = onIslandEnabledChange,
                     onAnimationEffectsChange = viewModel::setAnimationEffects,
                     onResetAll = viewModel::resetAll,
                 )

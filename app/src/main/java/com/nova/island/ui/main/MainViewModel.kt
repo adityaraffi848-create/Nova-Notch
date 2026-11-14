@@ -20,8 +20,9 @@ class MainViewModel(private val repository: SettingsRepository) : ViewModel() {
         initialValue = IslandSettings(),
     )
 
-    fun setIslandEnabled(enabled: Boolean) {
-        viewModelScope.launch { repository.setIslandEnabled(enabled) }
+    /** Menulis status island dan baru kembali setelah tersimpan, supaya service tidak membaca nilai lama. */
+    suspend fun commitIslandEnabled(enabled: Boolean) {
+        repository.setIslandEnabled(enabled)
     }
 
     fun setAnimationEffects(enabled: Boolean) {

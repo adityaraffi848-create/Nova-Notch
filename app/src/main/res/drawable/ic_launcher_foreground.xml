@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Kapsul island dengan outline gradient hijau-biru-ungu -->
+    <path android:pathData="M34,42 H74 A12,12 0 0 1 74,66 H34 A12,12 0 0 1 34,42 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="86"
+                android:endY="54"
+                android:startX="22"
+                android:startY="54"
+                android:type="linear">
+                <item android:color="#FF19E68C" android:offset="0.0" />
+                <item android:color="#FF4285FF" android:offset="0.55" />
+                <item android:color="#FF9B6DFF" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- Isi kapsul hitam -->
+    <path
+        android:fillColor="#FF050505"
+        android:pathData="M34,44.5 H74 A9.5,9.5 0 0 1 74,63.5 H34 A9.5,9.5 0 0 1 34,44.5 Z" />
+    <!-- Titik indikator hijau -->
+    <path
+        android:fillColor="#FF19E68C"
+        android:pathData="M70.8,54 a3.2,3.2 0 1,0 6.4,0 a3.2,3.2 0 1,0 -6.4,0 Z" />
+</vector>

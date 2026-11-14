@@ -14,4 +14,5 @@ data class IslandSettings(
     val animationSpeedPercent: Int = 100,
     val backgroundOpacityPercent: Int = 100,
     val gradientIntensityPercent: Int = 70,
+    val topOffsetDp: Int = 10,
 )
